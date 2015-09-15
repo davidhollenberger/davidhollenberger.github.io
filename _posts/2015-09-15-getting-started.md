@@ -29,25 +29,22 @@ Now that things are setup, here's a basic workflow for publishing new posts.
 
 * in `_posts` directory, create new file `YYYY-MM-DD-title.md`
 * add [YAML](yaml.org) front matter block at the top of the file
-
-```
+{% highlight yaml %}
 ---
 layout: post
 title: Blogging Like a Hacker
 ---
-```
+{% endhighlight %}
 
 * Write something informative (this will probably include a lot of google searches on markdown) then test with Jekyll
-
-```
+{% highlight bash %}
 jekyll serve
-```
+{% endhighlight %}
 * Make sure everything looks good by opening browser to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
 * Push changes to Github
-
-```
+{% highlight bash %}
 git commit
 git push
-```
+{% endhighlight %}
 * Open browser to [http://davidhollenberger.github.io](http://davidhollenberger.github.io)

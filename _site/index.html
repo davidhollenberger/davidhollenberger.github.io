@@ -66,6 +66,10 @@
       
     
       
+        
+      
+    
+      
     
 
     <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
@@ -138,30 +142,32 @@ Now that things are setup, here’s a basic workflow for publishing new posts.</
   <li>add <a href="yaml.org">YAML</a> front matter block at the top of the file</li>
 </ul>
 
-<h2 id="section">```</h2>
-<p>layout: post
-title: Blogging Like a Hacker
-—
-```</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">post</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Blogging Like a Hacker</span>
+<span class="nn">---</span></code></pre></div>
 
 <ul>
   <li>Write something informative (this will probably include a lot of google searches on markdown) then test with Jekyll</li>
 </ul>
 
-<p><code>
-jekyll serve
-</code>
-* Make sure everything looks good by opening browser to <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll serve</code></pre></div>
 
 <ul>
-  <li>Push changes to Github</li>
+  <li>
+    <p>Make sure everything looks good by opening browser to <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a></p>
+  </li>
+  <li>
+    <p>Push changes to Github</p>
+  </li>
 </ul>
 
-<p><code>
-git commit
-git push
-</code>
-* Open browser to <a href="http://davidhollenberger.github.io">http://davidhollenberger.github.io</a></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git commit
+git push</code></pre></div>
+
+<ul>
+  <li>Open browser to <a href="http://davidhollenberger.github.io">http://davidhollenberger.github.io</a></li>
+</ul>
 
   </div>
   
@@ -169,7 +175,7 @@ git push
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page2">Older</a>
   
   
     <span class="pagination-item newer">Newer</span>
