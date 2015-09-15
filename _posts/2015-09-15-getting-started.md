@@ -23,6 +23,7 @@ Layout and Design Ideas
 [Tom Preson-Werner](http://tom.preston-werner.com/) ([github repo](https://github.com/mojombo/tpw)) co-founder of Github and creater of Jekyll
 
 [Poole](http://getpoole.com)([github repo](https://github.com/poole/poole)) simple clean jekyll template
+
 Workflow
 --------
 Now that things are setup, here's a basic workflow for publishing new posts.
