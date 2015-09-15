@@ -3,10 +3,6 @@ layout: post
 title: Getting Started with Github Pages
 ---
 
-{{ page.title }}
-================
-<p class="meta">15 Sep 2015</p>
-
 Why use Github Pages and Jekyll?
 --------------------------------
 * I'm relatively new to Github, so it seems like a good way to learn more about it
@@ -22,8 +18,11 @@ Setting up Github Pages
 gem install jekyll
 ```  
 
-Let me be honest, I am not a web developer.  I do not have much interest in learning CSS/HTML or any kind of web design right now.  Thankfully, Jekyll has a few example blogs on their site and links to the Github repos of each blog.  One of the blogs listed is [Tom Preson-Werner](http://tom.preston-werner.com/) ([github repo](https://github.com/mojombo/tpw))who is a co-founder of Github and creater of Jekyll.  I "borrowed" most (ok, all) of the layout and design of this blog from him.
+Layout and Design Ideas
+-------------------------
+[Tom Preson-Werner](http://tom.preston-werner.com/) ([github repo](https://github.com/mojombo/tpw)) co-founder of Github and creater of Jekyll
 
+[Poole](http://getpoole.com)([github repo](https://github.com/poole/poole)) simple clean jekyll template
 Workflow
 --------
 Now that things are setup, here's a basic workflow for publishing new posts.
