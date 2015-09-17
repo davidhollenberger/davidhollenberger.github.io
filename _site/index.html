@@ -2,12 +2,11 @@
 <html lang="en-us">
 
   <head>
+  <meta charset="UTF-8">
   <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
     
@@ -16,17 +15,8 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/lanyon.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/styles.css">
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 </head>
 
 
@@ -70,6 +60,10 @@
       
     
       
+        
+      
+    
+      
     
 
     <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
@@ -102,72 +96,57 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="//2015/09/15/getting-started/">
-        Getting Started with Github Pages
+      <a href="//2015/09/17/ansible-tower/">
+        Ansible Tower EC2 Inventory
       </a>
     </h1>
 
-    <span class="post-date">15 Sep 2015</span>
+    <span class="post-date">17 Sep 2015</span>
 
-    <h2 id="why-use-github-pages-and-jekyll">Why use Github Pages and Jekyll?</h2>
-<ul>
-  <li>I’m relatively new to Github, so it seems like a good way to learn more about it</li>
-  <li>Learn markdown, again because it’s used by Github and it seems like a great way to document things.</li>
-  <li>It’s free!</li>
-</ul>
-
-<h2 id="setting-up-github-pages">Setting up Github Pages</h2>
-<ul>
-  <li>
-    <p>Check out the <a href="https://pages.github.com/">Github Pages</a> and follow the instructions.  I am starting out with just a User site.</p>
-  </li>
-  <li>
-    <p>Install <a href="https://http://jekyllrb.com/">Jekyll</a>
-<code>
-gem install jekyll
-</code></p>
-  </li>
-</ul>
-
-<h2 id="layout-and-design-ideas">Layout and Design Ideas</h2>
-<p><a href="http://tom.preston-werner.com/">Tom Preson-Werner</a> (<a href="https://github.com/mojombo/tpw">github repo</a>) co-founder of Github and creater of Jekyll</p>
-
-<p><a href="http://getpoole.com">Poole</a>(<a href="https://github.com/poole/poole">github repo</a>) simple clean jekyll template
-Workflow
-——–
-Now that things are setup, here’s a basic workflow for publishing new posts.</p>
+    <h2>Setting Up EC2 Inventory</h2>
 
 <ul>
-  <li>in <code>_posts</code> directory, create new file <code>YYYY-MM-DD-title.md</code></li>
-  <li>add <a href="yaml.org">YAML</a> front matter block at the top of the file</li>
-</ul>
-
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
-<span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">post</span>
-<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Blogging Like a Hacker</span>
-<span class="nn">---</span></code></pre></div>
+<li>Create new Inventory</li>
+<li>Inside inventory, create new group
 
 <ul>
-  <li>Write something informative (this will probably include a lot of google searches on markdown) then test with Jekyll</li>
+<li>Set source to Amazon EC2</li>
+<li>Set cloud credential, and other filters if needed</li>
+<li>Under Update Options, click Update on launch</li>
+<li>In source variables set the following</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">vpc_destination_variable</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">private_ip_address</span>
+</code></pre></div>
+<ul>
+<li>Click save and start sync process</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll serve</code></pre></div>
+<h2>Import group_vars from git project</h2>
 
 <ul>
-  <li>
-    <p>Make sure everything looks good by opening browser to <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a></p>
-  </li>
-  <li>
-    <p>Push changes to Github</p>
-  </li>
+<li>Drill down through Amazon EC2 group to the group that you want to import static variables from your project</li>
+<li>Click the &quot;Copy or move group&quot; button.</li>
+<li>Select &quot;Move&quot;, then check &quot;Use the inventory root&quot; option.  Click OK.</li>
+<li>Add a group name heading to the hosts file for your Ansible project</li>
+<li>SSH to Tower host and run tower-manage to sync variables from your inventory</li>
+<li>Before running tower-manage, delete ec2.py and ec2.ini from the project inventory. This conflicts with tower&#39;s local ec2.py for some reason.</li>
 </ul>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">tower-manage inventory_import --source<span class="o">=</span>/var/lib/awx/projects/&lt;path_to_inventory&gt; --inventory-name<span class="o">=</span><span class="s2">&quot;&lt;Tower_Inventory_Name&gt;&quot;</span>
+</code></pre></div>
+<h2>Oops</h2>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git commit
-git push</code></pre></div>
+<p>Next time this inventory is updated it moves the group that was previously moved to the inventory root back under the EC2 group.  Any variables that have been imported to the group will remain there, but if there are any changes to the variables in your project you will need to repeat the steps above to import them.</p>
 
-<ul>
-  <li>Open browser to <a href="http://davidhollenberger.github.io">http://davidhollenberger.github.io</a></li>
-</ul>
+<p>Working with Ansible Tower support on this problem.</p>
+
+<h2>Reference</h2>
+
+<p><a href="http://docs.ansible.com/ansible-tower/">Ansible Tower Docs</a></p>
+
+<p><a href="https://support.ansible.com/hc/en-us/articles/201958007-Private-EC2-VPC-Instances-in-Tower-Inventory">Private EC2 VPC Instances in Tower Inventory</a></p>
+
+<p><a href="https://support.ansible.com/hc/en-us/articles/201958047-Importing-existing-inventory-files-and-host-group-vars-into-Tower">Importing existing inventory files and host/group vars into Tower</a></p>
 
   </div>
   
