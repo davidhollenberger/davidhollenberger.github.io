@@ -10,7 +10,7 @@
 
   <title>
     
-      David Hollenberger &middot; A blog
+      David Hollenberger &middot; a blog
     
   </title>
 
@@ -22,63 +22,6 @@
 
   <body>
 
-    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
-
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <p></p>
-  </div>
-
-  <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="/">Home</a>
-
-    
-
-    
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/about/">About</a>
-        
-      
-    
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-    
-
-    <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
-    <a class="sidebar-nav-item" href="">GitHub project</a>
-    <span class="sidebar-nav-item">Currently v1.0.0</span>
-  </nav>
-
-  <div class="sidebar-item">
-    <p>
-      &copy; 2015. All rights reserved.
-    </p>
-  </div>
-</div>
-
-
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
@@ -86,7 +29,7 @@
         <div class="container">
           <h3 class="masthead-title">
             <a href="/" title="Home">David Hollenberger</a>
-            <small>A blog</small>
+            <small>a blog</small>
           </h3>
         </div>
       </div>
@@ -94,80 +37,20 @@
       <div class="container content">
         <div class="posts">
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="//2015/09/17/ansible-tower/">
-        Ansible Tower EC2 Inventory
-      </a>
-    </h1>
-
-    <span class="post-date">17 Sep 2015</span>
-
-    <h2>Setting Up EC2 Inventory</h2>
-
-<ul>
-<li>Create new Inventory</li>
-<li>Inside inventory, create new group
-
-<ul>
-<li>Set source to Amazon EC2</li>
-<li>Set cloud credential, and other filters if needed</li>
-<li>Under Update Options, click Update on launch</li>
-<li>In source variables set the following</li>
-</ul></li>
-</ul>
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">vpc_destination_variable</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">private_ip_address</span>
-</code></pre></div>
-<ul>
-<li>Click save and start sync process</li>
-</ul>
-
-<h2>Import group_vars from git project</h2>
-
-<ul>
-<li>Drill down through Amazon EC2 group to the group that you want to import static variables from your project</li>
-<li>Click the &quot;Copy or move group&quot; button.</li>
-<li>Select &quot;Move&quot;, then check &quot;Use the inventory root&quot; option.  Click OK.</li>
-<li>Add a group name heading to the hosts file for your Ansible project</li>
-<li>SSH to Tower host and run tower-manage to sync variables from your inventory</li>
-<li>Before running tower-manage, delete ec2.py and ec2.ini from the project inventory. This conflicts with tower&#39;s local ec2.py for some reason.</li>
-</ul>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">tower-manage inventory_import --source<span class="o">=</span>/var/lib/awx/projects/&lt;path_to_inventory&gt; --inventory-name<span class="o">=</span><span class="s2">&quot;&lt;Tower_Inventory_Name&gt;&quot;</span>
-</code></pre></div>
-<h2>Oops</h2>
-
-<p>Next time this inventory is updated it moves the group that was previously moved to the inventory root back under the EC2 group.  Any variables that have been imported to the group will remain there, but if there are any changes to the variables in your project you will need to repeat the steps above to import them.</p>
-
-<p>Working with Ansible Tower support on this problem.</p>
-
-<h2>Reference</h2>
-
-<p><a href="http://docs.ansible.com/ansible-tower/">Ansible Tower Docs</a></p>
-
-<p><a href="https://support.ansible.com/hc/en-us/articles/201958007-Private-EC2-VPC-Instances-in-Tower-Inventory">Private EC2 VPC Instances in Tower Inventory</a></p>
-
-<p><a href="https://support.ansible.com/hc/en-us/articles/201958047-Importing-existing-inventory-files-and-host-group-vars-into-Tower">Importing existing inventory files and host/group vars into Tower</a></p>
-
-  </div>
+    <li><span>17 Sep 2015</span> &raquo; <a href="/2015/09/17/ansible-tower/">Ansible Tower EC2 Inventory</a></li>
+  
+    <li><span>15 Sep 2015</span> &raquo; <a href="/2015/09/15/getting-started/">Getting Started with Github Pages</a></li>
+  
+    <li><span>01 Jan 2014</span> &raquo; <a href="/2014/01/01/example-content/">Example content</a></li>
   
 </div>
-
-<div class="pagination">
-  
-    <a class="pagination-item older" href="/page2">Older</a>
-  
-  
-    <span class="pagination-item newer">Newer</span>
-  
-</div>
-
 
       </div>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <!-- <label for="sidebar-checkbox" class="sidebar-toggle"></label> -->
 
-    <script>
+    <!-- <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
         var sidebar = document.querySelector('#sidebar');
@@ -183,6 +66,6 @@
           checkbox.checked = false;
         }, false);
       })(document);
-    </script>
+    </script> -->
   </body>
 </html>

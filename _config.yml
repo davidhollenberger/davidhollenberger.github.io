@@ -6,11 +6,11 @@ relative_permalinks: true
 
 # Setup
 title:               David Hollenberger
-tagline:             'A blog'
+tagline:             'a blog'
 description:         ''
 url:                 http://davidhollenberger.github.io
 baseurl:             ''
-paginate:            1
+paginate:            5
 
 # About/contact
 author:
