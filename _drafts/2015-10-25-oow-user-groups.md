@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Oracle Open World Day 1
+title:  OOW - Sunday User Group Sessions
 ---
 Just some notes from Oracle Open World Day 1.  A lot of great user group sessions today.  Starting the day a little late after running the Golden Gate Bridge with the SQLDev team and others.
 
@@ -115,7 +115,7 @@ svc_t - service time.  most useful of these statistics.
 ### netstat
 network connections, routing tagles, interface statistics.
 
-```netstat```
+*netstat*
 ```netstat -r```  - routing tables
 
 ### ping
