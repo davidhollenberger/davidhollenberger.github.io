@@ -145,7 +145,7 @@ oswatcher
 
 ## Oracle-L List
 Global email forum
-(subscribe at)[http://www.freelists.org/list/Oracle-L]
+(subscribe)[http://www.freelists.org/list/oracle-l]
 
 
 
