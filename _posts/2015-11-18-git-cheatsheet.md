@@ -3,7 +3,7 @@ layout: post
 title:  Git Cheatsheet and Workflow
 ---
 
-I'm fairly new to using Git, so I'm constantly Googling how to do things in Git.  This post is more about documenting the steps for myself, but I hope others are able to benefit from this as well.
+I'm fairly new to using Git, so I'm constantly Googling how to do things.  This post is more about documenting the steps for myself, but I hope others are able to benefit from this as well.
 
 ## New Feature Workflow
 
