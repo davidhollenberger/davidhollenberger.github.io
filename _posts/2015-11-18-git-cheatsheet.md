@@ -44,7 +44,7 @@ git branch -d new_feature
 
 ## Git Pull Alias
 
-A nice shortcut to pull and rebase.  Run this before issuing any commits to avoid merge conflicts.
+A nice shortcut to pull and rebase.  Run this before pushing your changes to avoid merge conflicts.
 
 ```
 alias gitpull="git pull --rebase"
