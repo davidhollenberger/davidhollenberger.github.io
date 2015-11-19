@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Git Cheat Sheet and Workflow
+comments: True
 ---
 
 I'm fairly new to using Git, so I'm constantly Googling how to do things.  This post is more about documenting the steps for myself, but I hope others are able to benefit from this as well.

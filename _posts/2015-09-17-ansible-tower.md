@@ -4,6 +4,7 @@ title: Ansible Tower EC2 Inventory
 tags:
   - ansible
   - aws
+comments: True
 ---
 
 

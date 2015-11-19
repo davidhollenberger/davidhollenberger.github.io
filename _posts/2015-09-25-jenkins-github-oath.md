@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Configure Github Oauth on Jenkins
+comments: True
 ---
 
 We are configuring a Jenkins instance on AWS and would like to use Github Oauth for user authentication and privileges.

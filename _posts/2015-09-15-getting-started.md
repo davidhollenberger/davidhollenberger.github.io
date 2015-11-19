@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting Started with Github Pages
+comments: True
 ---
 
 Why use Github Pages and Jekyll?
@@ -88,3 +89,8 @@ Closing Thoughts
 ------------------------
 
 Overall I'm pretty happy with this setup.  Considering I'm not a web guy and have never setup my own blog before, I feel like this will give me a good foundation to build on. Some things I would like to add down the road are: Enabling comments, Linking to Twitter/other social media, Search and better Tagging, and Google Analytics.  I'm sure there will always be something else to tweak and play around with.  Most importantly, this is a great way to get blogging and share information with my co-workers and peers.
+
+###Update
+I added Twitter and comments to my blog.  [Joshua Land](http://joshualande.com/jekyll-github-pages-poole/) has a great write up on how to do this.
+
+I'm still very happy with Github Pages and how my blog has progressed.  There's so much flexibility with this platform and it's so easy to add content to new posts.
