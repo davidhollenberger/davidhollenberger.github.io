@@ -9,7 +9,7 @@ title:               David Hollenberger
 tagline:             'a blog'
 description:         ''
 url:                 http://davidhollenberger.com
-baseurl:             ''
+baseurl:             http://davidhollenberger.com
 paginate:            5
 
 # About/contact
