@@ -8,7 +8,7 @@ relative_permalinks: true
 title:               David Hollenberger
 tagline:             'a blog'
 description:         ''
-url:                 http://davidhollenberger.github.io
+url:                 http://davidhollenberger.com
 baseurl:             ''
 paginate:            5
 
