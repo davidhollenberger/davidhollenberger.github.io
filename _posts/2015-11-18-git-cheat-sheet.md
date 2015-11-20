@@ -54,3 +54,8 @@ alias gitpull="git pull --rebase"
 ## Fixing Mistakes
 
 Eventually you'll make a mistake and think you've lost all of your work.  The nice thing about Git is that there's almost always some way to get your *commited* work back.  If you're in that situation you can use `git reflog` to get a list of all commits.  To get back to a specific commit grab the SHA from reflog and use `git merge` to pull the changes back in.
+
+## Links
+
+* [Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/syncing)
+* [Github Guides](https://guides.github.com/)
