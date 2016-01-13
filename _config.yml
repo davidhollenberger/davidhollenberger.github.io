@@ -10,6 +10,7 @@ tagline:             'a blog'
 description:         ''
 url:                 http://davidhollenberger.com
 baseurl:             http://davidhollenberger.com
+# baseurl:             ""
 paginate:            5
 
 # About/contact

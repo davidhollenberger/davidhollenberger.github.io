@@ -51,6 +51,13 @@ A nice shortcut to pull and rebase.  Run this before pushing your changes to avo
 alias gitpull="git pull --rebase"
 ```
 
+## Ignoring Files
+I often forget to add a .gitignore file when creating a repository.  After I notice that there are files in the repo that I don't want or need I then need to add the .gitignore file, but this does not remove the exising file from the git repo.  To clean up these files you need to remove it from the index.  Run the following command, then commit your changes to stop tracking the files listed in .gitignore.
+
+```
+git rm --cached <file>
+```
+
 ## Fixing Mistakes
 
 Eventually you'll make a mistake and think you've lost all of your work.  The nice thing about Git is that there's almost always some way to get your *commited* work back.  If you're in that situation you can use `git reflog` to get a list of all commits.  To get back to a specific commit grab the SHA from reflog and use `git merge` to pull the changes back in.
