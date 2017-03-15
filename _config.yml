@@ -21,7 +21,4 @@ author:
 # Custom vars
 version:             1.0.0
 
-# markdown: redcarpet
-highlighter: pygments
-
 gems: [jekyll-paginate]
