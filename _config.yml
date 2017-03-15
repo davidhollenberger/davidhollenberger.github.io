@@ -2,15 +2,14 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:               David Hollenberger
 tagline:             'a blog'
 description:         ''
 url:                 http://davidhollenberger.com
-baseurl:             http://davidhollenberger.com
-# baseurl:             ""
+# baseurl:             http://davidhollenberger.com
+baseurl:             ''
 paginate:            5
 
 # About/contact
@@ -22,5 +21,7 @@ author:
 # Custom vars
 version:             1.0.0
 
-markdown: redcarpet
+# markdown: redcarpet
 highlighter: pygments
+
+gems: [jekyll-paginate]
