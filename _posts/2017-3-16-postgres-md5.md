@@ -32,9 +32,14 @@ I kept forgetting these commands and accidentally leaving out the usernames when
 
 read -p "Enter Username: `echo $'\n> '` " myuser
 read -s -p "Enter Password: `echo $'\n> '` " mypassword
-printf "\nmd5`echo -n $mypassword$myuser | md5`\n"
-printf "md5`echo -n $mypassword$myuser | md5`" | pbcopy
-printf "\nMD5 hash copied to clipboard\n"
+printf "\n"
+
+md5=`md5 -q -s $mypassword$myuser`
+pgmd5=`printf "md5%s" "$md5"`
+
+echo $pgmd5 | pbcopy
+printf "$pgmd5"
+printf "\nMD5 Copied to clipboard\n"
 ```
 
 The script will prompt for your username and password.  It will also copy the resulting MD5 has to the clipboard.
